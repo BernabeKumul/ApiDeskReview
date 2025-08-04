@@ -1,0 +1,20 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-dotenv>=1.0.1
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+
+# Database dependencies (to be used later)
+pymongo>=4.10.1
+motor>=3.6.0
+
+# Vector database (to be used later)
+qdrant-client>=1.12.0
+
+# AI/ML dependencies (to be used later)
+openai>=1.54.0
+
+# Development dependencies
+pytest>=8.3.0
+pytest-asyncio>=0.24.0
+httpx>=0.28.0
