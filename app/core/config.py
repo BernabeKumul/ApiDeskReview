@@ -32,6 +32,14 @@ class Settings(BaseSettings):
     openai_model: str = "gpt-3.5-turbo"
     openai_max_tokens: int = 1000
     
+    # SQL Server Configuration
+    sqlserver_server: str = "10.10.50.30"  # Actualizar con el servidor real
+    sqlserver_database: str = "PrimusGFS"  # Actualizar con la base de datos real
+    sqlserver_username: str = "ApplicationUser_"  # Actualizar con el usuario real
+    sqlserver_password: str = "Dev23InAzz$"  # Actualizar con la contraseña real
+    sqlserver_driver: str = "ODBC Driver 17 for SQL Server"
+    sqlserver_trusted_connection: bool = False
+    
     # CORS Configuration
     allowed_origins: List[str] = ["http://localhost:3000", "http://localhost:8080"]
     allowed_methods: List[str] = ["GET", "POST", "PUT", "DELETE"]

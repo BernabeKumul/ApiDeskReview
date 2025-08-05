@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.api.v1.api import api_router
 from app.services.database import database_service
+from app.services.sqlserver_service import sqlserver_service
 
 
 def create_application() -> FastAPI:
@@ -56,6 +57,14 @@ async def startup_event():
     except Exception as e:
         print(f"❌ Failed to connect to MongoDB: {e}")
         print("⚠️  Application will continue but database operations will fail")
+    
+    # Conectar a SQL Server
+    try:
+        await sqlserver_service.connect()
+        print("✅ SQL Server connection established successfully")
+    except Exception as e:
+        print(f"❌ Failed to connect to SQL Server: {e}")
+        print("⚠️  Application will continue but audit operations will fail")
 
 
 @app.on_event("shutdown")
@@ -71,6 +80,13 @@ async def shutdown_event():
         print("✅ MongoDB disconnected successfully")
     except Exception as e:
         print(f"❌ Error disconnecting from MongoDB: {e}")
+    
+    # Desconectar de SQL Server
+    try:
+        await sqlserver_service.disconnect()
+        print("✅ SQL Server disconnected successfully")
+    except Exception as e:
+        print(f"❌ Error disconnecting from SQL Server: {e}")
 
 
 # Root endpoint
