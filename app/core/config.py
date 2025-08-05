@@ -18,8 +18,8 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 30
     
     # MongoDB Configuration
-    mongodb_url: str = "mongodb://localhost:27017"
-    mongodb_database: str = "fastapi_db"
+    mongodb_url: str = "mongodb://ApplicationUser_:Mong0dev%2424@10.10.50.76:27017/"  # Actualizar con credenciales reales
+    mongodb_database: str = "AzzuleAI"
     
     # Qdrant Configuration
     qdrant_host: str = "localhost"
