@@ -8,7 +8,9 @@ import logging
 from app.services.audit_service import audit_service
 from app.schemas.audit import (
     AuditDocumentsListResponse,
-    AuditDocumentResponse
+    AuditDocumentResponse,
+    AuditHeadersListResponse,
+    AuditHeaderResponse
 )
 
 # Configurar logging
@@ -31,6 +33,15 @@ def convert_model_to_response(document) -> AuditDocumentResponse:
         relation_question_id=document.relation_question_id,
         short_name=document.short_name,
         used_reference=document.used_reference
+    )
+
+
+def convert_header_to_response(header) -> AuditHeaderResponse:
+    """Convierte un modelo de header de auditoría a esquema de respuesta."""
+    return AuditHeaderResponse(
+        audit_header_id=header.audit_header_id,
+        org_id=header.org_id,
+        org_name=header.org_name
     )
 
 
@@ -94,6 +105,51 @@ async def get_audit_documents(
         )
     except Exception as e:
         logger.error(f"Error inesperado al obtener documentos de auditoría: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error interno del servidor: {str(e)}"
+        )
+
+
+@router.get(
+    "/headers",
+    response_model=AuditHeadersListResponse,
+    summary="Obtener listado de auditorías",
+    description="Recupera el listado completo de auditorías disponibles"
+)
+async def get_audit_headers():
+    """
+    Obtiene el listado completo de auditorías disponibles.
+    
+    Ejecuta el stored procedure: GetDemoAuditAzzuleAI_Alias_jbk
+    
+    Respuesta:
+    - Lista completa de auditorías con AuditHeaderID, OrgID y OrgName
+    """
+    try:
+        logger.info("Obteniendo listado completo de auditorías")
+        
+        # Obtener auditorías del servicio
+        headers = await audit_service.get_audit_headers()
+        
+        # Convertir a esquemas de respuesta
+        response_data = [convert_header_to_response(header) for header in headers]
+        
+        return AuditHeadersListResponse(
+            success=True,
+            message=f"Se encontraron {len(headers)} auditorías",
+            data=response_data,
+            total_count=len(headers)
+        )
+        
+    except RuntimeError as e:
+        logger.error(f"Error del servicio: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error interno del servidor: {str(e)}"
+        )
+    except Exception as e:
+        logger.error(f"Error inesperado al obtener listado de auditorías: {e}")
         raise HTTPException(
             status_code=500,
             detail=f"Error interno del servidor: {str(e)}"

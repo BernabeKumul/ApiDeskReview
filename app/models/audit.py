@@ -93,6 +93,48 @@ class AuditDocumentFilter:
 
 
 @dataclass
+class AuditHeader:
+    """
+    Modelo de datos para un header de auditoría.
+    Representa los datos retornados por el stored procedure GetDemoAuditAzzuleAI_Alias_jbk.
+    """
+    
+    audit_header_id: int
+    org_id: int
+    org_name: Optional[str] = None
+    
+    @classmethod
+    def from_dict(cls, data: dict) -> 'AuditHeader':
+        """
+        Crea una instancia de AuditHeader desde un diccionario.
+        
+        Args:
+            data: Diccionario con los datos del header
+            
+        Returns:
+            Instancia de AuditHeader
+        """
+        return cls(
+            audit_header_id=data.get('AuditHeaderID'),
+            org_id=data.get('OrgID'),
+            org_name=data.get('OrgName')
+        )
+    
+    def to_dict(self) -> dict:
+        """
+        Convierte la instancia a diccionario.
+        
+        Returns:
+            Diccionario con los datos del header
+        """
+        return {
+            'AuditHeaderID': self.audit_header_id,
+            'OrgID': self.org_id,
+            'OrgName': self.org_name
+        }
+
+
+@dataclass
 class StoredProcedureParameters:
     """
     Modelo para parámetros de stored procedures de auditoría.

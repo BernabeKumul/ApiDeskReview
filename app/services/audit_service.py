@@ -5,7 +5,7 @@ Maneja todas las operaciones relacionadas con auditorías y documentos asociados
 from typing import List, Optional
 import logging
 from app.services.sqlserver_service import sqlserver_service
-from app.models.audit import AuditDocument, StoredProcedureParameters
+from app.models.audit import AuditDocument, AuditHeader, StoredProcedureParameters
 
 # Configurar logging
 logger = logging.getLogger(__name__)
@@ -229,6 +229,44 @@ class AuditService:
         except Exception as e:
             logger.error(f"Error al filtrar documentos por tipo: {e}")
             raise
+    
+    async def get_audit_headers(self) -> List[AuditHeader]:
+        """
+        Obtiene la lista completa de auditorías disponibles.
+        
+        Ejecuta el stored procedure: GetDemoAuditAzzuleAI_Alias_jbk
+        
+        Returns:
+            Lista de headers de auditoría con AuditHeaderID, OrgID, OrgName
+            
+        Raises:
+            RuntimeError: Si hay problemas con la conexión a la base de datos
+        """
+        try:
+            logger.info("Ejecutando SP GetDemoAuditAzzuleAI_Alias_jbk para obtener lista de auditorías")
+            
+            # Ejecutar stored procedure sin parámetros
+            results = await self.sqlserver_service.execute_stored_procedure(
+                procedure_name="GetDemoAuditAzzuleAI_Alias_jbk",
+                parameters={}
+            )
+            
+            # Convertir resultados a modelos de datos
+            headers = []
+            for row in results:
+                try:
+                    header = AuditHeader.from_dict(row)
+                    headers.append(header)
+                except Exception as e:
+                    logger.warning(f"Error al procesar fila: {row}. Error: {e}")
+                    continue
+            
+            logger.info(f"Se encontraron {len(headers)} auditorías")
+            return headers
+            
+        except Exception as e:
+            logger.error(f"Error al obtener lista de auditorías: {e}")
+            raise RuntimeError(f"Error interno al obtener lista de auditorías: {str(e)}")
 
 
 # Instancia global del servicio de auditoría
