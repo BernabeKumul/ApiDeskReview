@@ -41,7 +41,10 @@ def convert_header_to_response(header) -> AuditHeaderResponse:
     return AuditHeaderResponse(
         audit_header_id=header.audit_header_id,
         org_id=header.org_id,
-        org_name=header.org_name
+        org_name=header.org_name,
+        oper_id=header.oper_id,
+        oper_name=header.oper_name,
+        products=header.products
     )
 
 
@@ -124,7 +127,7 @@ async def get_audit_headers():
     Ejecuta el stored procedure: GetDemoAuditAzzuleAI_Alias_jbk
     
     Respuesta:
-    - Lista completa de auditorías con AuditHeaderID, OrgID y OrgName
+    - Lista completa de auditorías con AuditHeaderID, OrgID, OrgName, OperID, OperName y Products
     """
     try:
         logger.info("Obteniendo listado completo de auditorías")

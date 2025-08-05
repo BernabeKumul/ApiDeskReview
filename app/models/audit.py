@@ -102,6 +102,9 @@ class AuditHeader:
     audit_header_id: int
     org_id: int
     org_name: Optional[str] = None
+    oper_id: Optional[int] = None
+    oper_name: Optional[str] = None
+    products: Optional[str] = None
     
     @classmethod
     def from_dict(cls, data: dict) -> 'AuditHeader':
@@ -117,7 +120,10 @@ class AuditHeader:
         return cls(
             audit_header_id=data.get('AuditHeaderID'),
             org_id=data.get('OrgID'),
-            org_name=data.get('OrgName')
+            org_name=data.get('OrgName'),
+            oper_id=data.get('OperID'),
+            oper_name=data.get('OperName'),
+            products=data.get('Products')
         )
     
     def to_dict(self) -> dict:
@@ -130,7 +136,10 @@ class AuditHeader:
         return {
             'AuditHeaderID': self.audit_header_id,
             'OrgID': self.org_id,
-            'OrgName': self.org_name
+            'OrgName': self.org_name,
+            'OperID': self.oper_id,
+            'OperName': self.oper_name,
+            'Products': self.products
         }
 
 

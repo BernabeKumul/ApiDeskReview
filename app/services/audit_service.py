@@ -237,7 +237,7 @@ class AuditService:
         Ejecuta el stored procedure: GetDemoAuditAzzuleAI_Alias_jbk
         
         Returns:
-            Lista de headers de auditoría con AuditHeaderID, OrgID, OrgName
+            Lista de headers de auditoría con AuditHeaderID, OrgID, OrgName, OperID, OperName, Products
             
         Raises:
             RuntimeError: Si hay problemas con la conexión a la base de datos

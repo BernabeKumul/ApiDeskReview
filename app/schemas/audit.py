@@ -79,6 +79,9 @@ class AuditHeaderResponse(BaseSchema):
     audit_header_id: int = Field(..., alias="AuditHeaderId", description="ID del header de auditoría")
     org_id: int = Field(..., alias="OrgId", description="ID de la organización")
     org_name: Optional[str] = Field(None, alias="OrgName", description="Nombre de la organización")
+    oper_id: Optional[int] = Field(None, alias="OperId", description="ID de la operación")
+    oper_name: Optional[str] = Field(None, alias="OperName", description="Nombre de la operación")
+    products: Optional[str] = Field(None, alias="Products", description="Productos asociados")
 
 
 class AuditHeadersListResponse(BaseSchema):
