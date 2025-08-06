@@ -24,8 +24,9 @@ class Settings(BaseSettings):
     # Qdrant Configuration
     qdrant_host: str = "localhost"
     qdrant_port: int = 6333
-    qdrant_api_key: str = "your-qdrant-api-key"
-    qdrant_collection_name: str = "documents"
+    qdrant_api_key: str = ""  # Sin API key para desarrollo local
+    qdrant_collection_name: str = "AIDocumentsTest"  # Colección específica para testing
+    qdrant_https: bool = False  # Usar HTTP para desarrollo local
     
     # OpenAI Configuration
     openai_api_key: str = "your-openai-api-key-here"

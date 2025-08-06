@@ -15,8 +15,8 @@ echo "🐍 Activating virtual environment..."
 source venv/bin/activate
 
 # Check if .env exists
-if [ ! -f ".env" ]; then
-    echo "⚠️  .env file not found. Creating default .env file..."
+d. Creating default .env file..."if [ ! -f ".env" ]; then
+    echo "⚠️  .env file not foun
     cat > .env << EOF
 APP_NAME=FastAPI Backend
 DEBUG=True

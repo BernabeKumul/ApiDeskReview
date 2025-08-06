@@ -4,6 +4,7 @@ from app.core.config import settings
 from app.api.v1.api import api_router
 from app.services.database import database_service
 from app.services.sqlserver_service import sqlserver_service
+from app.services.vector_store import vector_store_service
 
 
 def create_application() -> FastAPI:
@@ -65,6 +66,14 @@ async def startup_event():
     except Exception as e:
         print(f"❌ Failed to connect to SQL Server: {e}")
         print("⚠️  Application will continue but audit operations will fail")
+    
+    # Conectar a Qdrant
+    try:
+        await vector_store_service.connect()
+        print("✅ Qdrant connection established successfully")
+    except Exception as e:
+        print(f"❌ Failed to connect to Qdrant: {e}")
+        print("⚠️  Application will continue but vector search operations will fail")
 
 
 @app.on_event("shutdown")
@@ -87,6 +96,13 @@ async def shutdown_event():
         print("✅ SQL Server disconnected successfully")
     except Exception as e:
         print(f"❌ Error disconnecting from SQL Server: {e}")
+    
+    # Desconectar de Qdrant
+    try:
+        await vector_store_service.disconnect()
+        print("✅ Qdrant disconnected successfully")
+    except Exception as e:
+        print(f"❌ Error disconnecting from Qdrant: {e}")
 
 
 # Root endpoint
