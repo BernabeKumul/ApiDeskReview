@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import health, ai_documents, audit, vector_search
+from app.api.v1.endpoints import health, ai_documents, audit, vector_search, ai_process
 
 api_router = APIRouter()
 
@@ -26,4 +26,10 @@ api_router.include_router(
     vector_search.router,
     prefix="",
     tags=["Vector Search"]
+)
+
+api_router.include_router(
+    ai_process.router,
+    prefix="",
+    tags=["AI Process"]
 )

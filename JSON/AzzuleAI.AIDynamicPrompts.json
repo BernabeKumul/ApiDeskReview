@@ -1,115 +1,22 @@
-[{
-  "_id": {
-    "$oid": "68373dd7c330f8e23e66223b"
+[
+  {
+    "NameSection": "4346",
+    "Text": "Question 9.01.01 – Does the operation have a documented Integrated Pest Management (IPM) plan?\r\nThe operation should provide a written IPM plan that outlines how it identifies and manages pests while minimizing environmental risk. The plan should:\r\n Describe pest monitoring and identification practices\r\n Explain the use of action or economic thresholds to guide treatment decisions\r\n Include at least two pest prevention practices\r\n Address pesticide resistance management strategies\r\n Include measures to protect pollinators (e.g., avoiding peak activity times, maintaining habitat)\r\nResponse Format:\r\n Reference document title(s), sections, and last revision dates\r\n Identify if pest monitoring is described (e.g., visual scouting, trap use)\r\n Explain whether thresholds are defined and used\r\n Note if prevention and resistance strategies are described\r\n State if pollinator protection is included or missing\r\n Break into multiple paragraphs by topic\r\n\r\nExample:\r\nThe operation has submitted an Integrated Pest Management Plan titled IPM_Strawberry2024.pdf, revised on March 12, 2024. Pest monitoring is documented using weekly scouting and sticky traps, detailed in Section 3. Action thresholds are defined for mites and aphids, including treatment thresholds of 5 mites/leaflet. The plan describes two prevention methods: crop rotation and border plantings to attract beneficials. However, pollinator protection strategies are not addressed."
   },
-  "Title": "Desk Review - IPM 9",
-  "Description": "Esquema para auditorias de DeskReview",
-  "CurrentVersion": 6,
-  "CreatedAt": {
-    "$date": "2025-05-28T16:46:15.235Z"
+  {
+    "NameSection": "4347",
+    "Text": "Question 9.01.02 – Does the operation have evidence of implementation of IPM practices?\r\n The operation should provide records that demonstrate active use of the IPM plan. These may include:\r\n Pest scouting reports from a qualified person\r\n Use of action thresholds in treatment decisions\r\n Documentation of non-chemical control methods (e.g., crop rotation, physical barriers, beneficial insects)\r\n Practices to delay pesticide resistance\r\n Efforts to protect pollinators (e.g., adjusting application timing, communication with beekeepers)\r\n Response Format:\r\n Summarize records reviewed (e.g., scouting reports, spray logs, photos of traps)\r\n List timeframe of documents (e.g., “Reports cover 3/15/2024 to 5/20/2024”)\r\n State qualifications of personnel (e.g., PCA license) if available\r\n Identify any missing documentation (e.g., no resistance strategy shown)\r\n Break into multiple paragraphs\r\n Example:\r\n The operation submitted pest scouting reports (Scouting_Log_Spring2024.pdf) from March through May 2024. Reports were completed weekly by a certified PCA. Action thresholds are mentioned for aphid pressure, and treatment decisions were documented accordingly. Non-chemical control methods include pheromone traps and perimeter wildflower strips for beneficial insect attraction. However, no documentation was found on pesticide resistance management strategies."
   },
-  "UpdatedAt": {
-    "$date": "2025-06-12T22:38:36.311Z"
+  {
+    "NameSection": "4348",
+    "Text": "Question 9.01.02a – Does the operation monitor the effectiveness of non-chemical control methods used?\r\n Look for records or evaluations of how well non-chemical methods worked. Evidence may include:\r\n Follow-up pest counts after control method application\r\n Reports showing reduced pest levels\r\n Comments in scouting logs or management reviews about effectiveness\r\n Records for repeated use or adjustments of specific control strategies\r\n Response Format:\r\n Identify the non-chemical controls used\r\n Reference any data or observations of their impact\r\n State clearly if no evidence of effectiveness tracking is provided\r\n Break into paragraphs for clarity\r\n Example:\r\n The operation provided monitoring data in Beneficial_Insect_Effectiveness_2024.xlsx showing lady beetle releases and aphid counts pre- and post-release. Reports indicate a 30% reduction in aphid populations over two weeks. Additional notes in Scouting_March2024.pdf support this outcome. However, no long-term analysis or follow-up reports beyond April 2024 were submitted."
   },
-  "UserCreate": "SYSTEM",
-  "UserUpdate": "SYSTEM",
-  "SystemUse": "PGFS",
-  "ModuleUse": "IPM-9",
-  "ModelsAI": [
-    {
-      "Provider": "OpenAI",
-      "ModelID": "gpt-4o",
-      "InUse": false,
-      "Settings": {
-        "_t": [
-          "ModelSettings",
-          "OpenAISetting"
-        ],
-        "Temperature": 0,
-        "MaxTokens": 4000
-      }
-    },
-    {
-      "Provider": "OpenAI",
-      "ModelID": "gpt-4.1",
-      "InUse": true,
-      "Settings": {
-        "_t": [
-          "ModelSettings",
-          "OpenAISetting"
-        ],
-        "Temperature": 0,
-        "MaxTokens": 4000
-      }
-    },
-    {
-      "Provider": "GeminiAI",
-      "ModelID": "Gemini-1",
-      "InUse": false,
-      "Settings": {
-        "_t": [
-          "ModelSettings",
-          "GeminiAISetting"
-        ],
-        "ContextWindow": 7,
-        "TopP": 4000,
-        "FrequencyPenalty": 4000
-      }
-    }
-  ],
-  "Sections": [
-    {
-      "NameSection": "Instructions",
-      "Text": "Act as an IPM Compliance Auditor. Evaluate compliance with PrimusGFS Module 9 – Integrated Pest Management (IPM) Practices strictly based on the uploaded documents.\r\n- Do not assume compliance where documentation is missing or unclear\r\n- Do not offer suggestions or improvements\r\n- Focus only on determining if the documents meet compliance expectations\r\n- Use all documents provided, even duplicates or scans with limited content\r\nWrite detailed, structured compliance summaries in a professional, audit-style format. Your summaries should reference:\r\n- Document names (including file extensions)\r\n- Document sections or content descriptions\r\n- Relevant dates and timeframes\r\n- Personnel or titles when identified\r\nIf documentation is missing or insufficient, clearly state this and explain why the operation is considered non-compliant.\r\nFor the purpose of this exercise, consider [product] as the product of the audit and [operationName] as the audited operation.\r\nGeneral Response Format for Each Question\r\nEach response must include:\r\n1. Summary of key compliance findings, citing document names and details\r\n2. Clear statement of any missing or insufficient elements\r\n3. Explanation if submitted documents were not used (e.g., “Farm work logs were submitted but did not contain relevant information for this question.”)\r\n4. Multiple paragraphs, each focused on a specific theme (e.g., pest monitoring, thresholds, non-chemical controls)\r\n5. Response must not exceed 2,000 characters\r\n6. Always use the exact document file name (e.g., IPMPlan2023.pdf) — do not shorten or summarize\r\n7. Write in the requested [Language]",
-      "ReplaceValues": [
-        "[product]",
-        "[operationName]",
-        "[Language]"
-      ],
-      "Sections": []
-    },
-    {
-      "NameSection": "Guideline",
-      "Text": "",
-      "ReplaceValues": [],
-      "Sections": [
-        {
-          "NameSection": "4346",
-          "Text": "Question 9.01.01 – Does the operation have a documented Integrated Pest Management (IPM) plan?\r\nThe operation should provide a written IPM plan that outlines how it identifies and manages pests while minimizing environmental risk. The plan should:\r\n Describe pest monitoring and identification practices\r\n Explain the use of action or economic thresholds to guide treatment decisions\r\n Include at least two pest prevention practices\r\n Address pesticide resistance management strategies\r\n Include measures to protect pollinators (e.g., avoiding peak activity times, maintaining habitat)\r\nResponse Format:\r\n Reference document title(s), sections, and last revision dates\r\n Identify if pest monitoring is described (e.g., visual scouting, trap use)\r\n Explain whether thresholds are defined and used\r\n Note if prevention and resistance strategies are described\r\n State if pollinator protection is included or missing\r\n Break into multiple paragraphs by topic\r\n\r\nExample:\r\nThe operation has submitted an Integrated Pest Management Plan titled IPM_Strawberry2024.pdf, revised on March 12, 2024. Pest monitoring is documented using weekly scouting and sticky traps, detailed in Section 3. Action thresholds are defined for mites and aphids, including treatment thresholds of 5 mites/leaflet. The plan describes two prevention methods: crop rotation and border plantings to attract beneficials. However, pollinator protection strategies are not addressed.",
-          "ReplaceValues": [],
-          "Sections": []
-        },
-        {
-          "NameSection": "4347",
-          "Text": "Question 9.01.02 – Does the operation have evidence of implementation of IPM practices?\r\n The operation should provide records that demonstrate active use of the IPM plan. These may include:\r\n Pest scouting reports from a qualified person\r\n Use of action thresholds in treatment decisions\r\n Documentation of non-chemical control methods (e.g., crop rotation, physical barriers, beneficial insects)\r\n Practices to delay pesticide resistance\r\n Efforts to protect pollinators (e.g., adjusting application timing, communication with beekeepers)\r\n Response Format:\r\n Summarize records reviewed (e.g., scouting reports, spray logs, photos of traps)\r\n List timeframe of documents (e.g., “Reports cover 3/15/2024 to 5/20/2024”)\r\n State qualifications of personnel (e.g., PCA license) if available\r\n Identify any missing documentation (e.g., no resistance strategy shown)\r\n Break into multiple paragraphs\r\n Example:\r\n The operation submitted pest scouting reports (Scouting_Log_Spring2024.pdf) from March through May 2024. Reports were completed weekly by a certified PCA. Action thresholds are mentioned for aphid pressure, and treatment decisions were documented accordingly. Non-chemical control methods include pheromone traps and perimeter wildflower strips for beneficial insect attraction. However, no documentation was found on pesticide resistance management strategies.",
-          "ReplaceValues": [],
-          "Sections": []
-        },
-        {
-          "NameSection": "4348",
-          "Text": "Question 9.01.02a – Does the operation monitor the effectiveness of non-chemical control methods used?\r\n Look for records or evaluations of how well non-chemical methods worked. Evidence may include:\r\n Follow-up pest counts after control method application\r\n Reports showing reduced pest levels\r\n Comments in scouting logs or management reviews about effectiveness\r\n Records for repeated use or adjustments of specific control strategies\r\n Response Format:\r\n Identify the non-chemical controls used\r\n Reference any data or observations of their impact\r\n State clearly if no evidence of effectiveness tracking is provided\r\n Break into paragraphs for clarity\r\n Example:\r\n The operation provided monitoring data in Beneficial_Insect_Effectiveness_2024.xlsx showing lady beetle releases and aphid counts pre- and post-release. Reports indicate a 30% reduction in aphid populations over two weeks. Additional notes in Scouting_March2024.pdf support this outcome. However, no long-term analysis or follow-up reports beyond April 2024 were submitted.",
-          "ReplaceValues": [],
-          "Sections": []
-        },
-        {
-          "NameSection": "4349",
-          "Text": "Question 9.01.03 – Does the operation assess pesticide risk? \r\n Documentation should show that the operation considers risks to people, pollinators, and the environment when selecting pesticides. Look for:\r\n Pesticide risk assessments or summaries\r\n Consideration of EPA risk tiers or toxicity classifications\r\n Selection of lower-risk alternatives\r\n Internal SOPs guiding pesticide decisions based on risk\r\n Response Format:\r\n Reference documents (e.g., Pesticide_Risk_Assessment2024.pdf)\r\n Note whether the assessment addresses humans, pollinators, and non-target species\r\n Identify any missing topics (e.g., pollinator risk not discussed)\r\n Break into focused paragraphs\r\n Example:\r\n The operation submitted a pesticide risk matrix (Pesticide_Risk_Assessment2024.pdf) listing all products used during the 2024 growing season, including EPA toxicity ratings and pollinator impact. The matrix supports selection of low-risk fungicides and limited use of neonicotinoids. However, the risk assessment does not address off-target drift concerns or include environmental impact monitoring.",
-          "ReplaceValues": [],
-          "Sections": []
-        },
-        {
-          "NameSection": "4350",
-          "Text": "Question 9.01.03a – Are pesticide applications tied to a documented justification?\r\n The operation should show why each pesticide application was necessary, ideally tied to: \r\n Pest pressure above an action threshold \r\n Disease-conducive conditions \r\n Trap counts, scouting reports, crop damage notes\r\n Response Format: \r\n Identify application logs or treatment records used \r\n Link each treatment to supporting evidence (e.g., trap data from same day) \r\n Clearly state if treatments were made without justification \r\n Break into paragraphs \r\n Example:\r\n Pesticide application logs (Spray_Log_Q2_2024.pdf) indicate treatments for mildew and leafminers on multiple dates. Justifications are referenced in Scouting_Reports_Q2.pdf, showing mildew pressure\r\n above threshold levels on 4/10 and 4/17. However, two applications (5/5 and 5/12) were made without any documented pest observations or thresholds noted, suggesting incomplete justification for use.",
-          "ReplaceValues": [],
-          "Sections": []
-        }
-      ]
-    },
-    {
-      "NameSection": "Command",
-      "Text": "Provides a json response with the following keys:\n1.\tComplianceLevel:Always returns the value 2.\n2.\tComments: Break the response into multiple paragraphs. Each paragraph should focus on a specific aspects described above.\n3.\tFilesSearch: return a JSON with the FileName and DocumentID, returns an empty array in case no files are sent \n",
-      "ReplaceValues": [],
-      "Sections": []
-    }
-  ]
-}]
+  {
+    "NameSection": "4349",
+    "Text": "Question 9.01.03 – Does the operation assess pesticide risk? \r\n Documentation should show that the operation considers risks to people, pollinators, and the environment when selecting pesticides. Look for:\r\n Pesticide risk assessments or summaries\r\n Consideration of EPA risk tiers or toxicity classifications\r\n Selection of lower-risk alternatives\r\n Internal SOPs guiding pesticide decisions based on risk\r\n Response Format:\r\n Reference documents (e.g., Pesticide_Risk_Assessment2024.pdf)\r\n Note whether the assessment addresses humans, pollinators, and non-target species\r\n Identify any missing topics (e.g., pollinator risk not discussed)\r\n Break into focused paragraphs\r\n Example:\r\n The operation submitted a pesticide risk matrix (Pesticide_Risk_Assessment2024.pdf) listing all products used during the 2024 growing season, including EPA toxicity ratings and pollinator impact. The matrix supports selection of low-risk fungicides and limited use of neonicotinoids. However, the risk assessment does not address off-target drift concerns or include environmental impact monitoring."
+  },
+  {
+    "NameSection": "4350",
+    "Text": "Question 9.01.03a – Are pesticide applications tied to a documented justification?\r\n The operation should show why each pesticide application was necessary, ideally tied to: \r\n Pest pressure above an action threshold \r\n Disease-conducive conditions \r\n Trap counts, scouting reports, crop damage notes\r\n Response Format: \r\n Identify application logs or treatment records used \r\n Link each treatment to supporting evidence (e.g., trap data from same day) \r\n Clearly state if treatments were made without justification \r\n Break into paragraphs \r\n Example:\r\n Pesticide application logs (Spray_Log_Q2_2024.pdf) indicate treatments for mildew and leafminers on multiple dates. Justifications are referenced in Scouting_Reports_Q2.pdf, showing mildew pressure\r\n above threshold levels on 4/10 and 4/17. However, two applications (5/5 and 5/12) were made without any documented pest observations or thresholds noted, suggesting incomplete justification for use."
+  }
+]

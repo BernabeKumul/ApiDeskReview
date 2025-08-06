@@ -43,3 +43,6 @@ def setup_logger(
 
 # Application logger
 app_logger = setup_logger("fastapi_app")
+
+# Default logger export for convenience
+logger = app_logger

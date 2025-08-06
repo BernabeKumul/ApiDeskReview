@@ -1,0 +1,57 @@
+{
+  "AuditID": 12345,
+  "OrgID": 67890,
+  "Operation": "Strawberry Farm Operations",
+  "Products": "Fresh Strawberries",
+  "Documents": [
+    {
+      "QuestionID": 4346,
+      "DocumentsId": [
+        {
+          "DocumentId": 1,
+          "URL": "http://example.com/ipm_plan.pdf"
+        },
+        {
+          "DocumentId": 2,
+          "URL": "http://example.com/monitoring_log.pdf"
+        }
+      ]
+    },
+    {
+      "QuestionID": 4347,
+      "DocumentsId": [
+        {
+          "DocumentId": 3,
+          "URL": "http://example.com/implementation_records.pdf"
+        }
+      ]
+    },
+    {
+      "QuestionID": 4348,
+      "DocumentsId": [
+        {
+          "DocumentId": 4,
+          "URL": "http://example.com/effectiveness_data.pdf"
+        }
+      ]
+    },
+    {
+      "QuestionID": 4349,
+      "DocumentsId": [
+        {
+          "DocumentId": 5,
+          "URL": "http://example.com/risk_assessment.pdf"
+        }
+      ]
+    },
+    {
+      "QuestionID": 4350,
+      "DocumentsId": [
+        {
+          "DocumentId": 6,
+          "URL": "http://example.com/application_justification.pdf"
+        }
+      ]
+    }
+  ]
+}
