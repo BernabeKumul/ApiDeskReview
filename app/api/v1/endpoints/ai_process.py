@@ -63,9 +63,23 @@ async def process_audit_information(
         # Convert AI responses to QuestionResponse objects
         question_responses = []
         for ai_response in ai_responses:
+            # Handle Comments field - ensure it's a string
+            comments = ai_response.get("Comments", "")
+            if isinstance(comments, list):
+                # If comments is a list, join the elements
+                comments = " ".join(str(item) for item in comments)
+            elif not isinstance(comments, str):
+                # If comments is not a string, convert it
+                comments = str(comments)
+            
+            # Handle QuestionID field - ensure it's a string
+            question_id = ai_response.get("QuestionID", "unknown")
+            if not isinstance(question_id, str):
+                question_id = str(question_id)
+            
             question_response = QuestionResponse(
                 ComplianceLevel=ai_response.get("ComplianceLevel", 2),
-                Comments=ai_response.get("Comments", ""),
+                Comments=comments,
                 FilesSearch=[
                     FileSearchResult(
                         FileName=file_info["FileName"],
@@ -73,7 +87,7 @@ async def process_audit_information(
                     )
                     for file_info in ai_response.get("FilesSearch", [])
                 ],
-                QuestionID=ai_response.get("QuestionID", "unknown")
+                QuestionID=question_id
             )
             question_responses.append(question_response)
         

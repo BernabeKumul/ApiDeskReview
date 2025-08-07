@@ -362,7 +362,7 @@ Documents:
             try:
                 ai_response = json.loads(content)
                 
-                # Ensure required fields are present
+                # Ensure required fields are present and properly formatted
                 if "ComplianceLevel" not in ai_response:
                     ai_response["ComplianceLevel"] = 2
                 
@@ -374,6 +374,18 @@ Documents:
                 
                 if "QuestionID" not in ai_response:
                     ai_response["QuestionID"] = question_id
+                
+                # Ensure Comments is a string (not a list)
+                if "Comments" in ai_response:
+                    comments = ai_response["Comments"]
+                    if isinstance(comments, list):
+                        ai_response["Comments"] = " ".join(str(item) for item in comments)
+                    elif not isinstance(comments, str):
+                        ai_response["Comments"] = str(comments)
+                
+                # Ensure QuestionID is a string
+                if "QuestionID" in ai_response and not isinstance(ai_response["QuestionID"], str):
+                    ai_response["QuestionID"] = str(ai_response["QuestionID"])
                 
                 return ai_response
                 
@@ -416,13 +428,13 @@ Documents:
             
             # Parse the JSON response
             content = response.choices[0].message.content
-            #logger.info(f"OpenAI response received: {len(content)} characters")
+            logger.info(f"OpenAI response received: {len(content)} characters")
             
             # Try to parse JSON response
             try:
                 ai_response = json.loads(content)
                 
-                # Ensure required fields are present
+                # Ensure required fields are present and properly formatted
                 if "ComplianceLevel" not in ai_response:
                     ai_response["ComplianceLevel"] = 2
                 
@@ -431,6 +443,14 @@ Documents:
                         {"FileName": doc["FileName"], "DocumentID": doc["FileName"]} 
                         for doc in documents
                     ]
+                
+                # Ensure Comments is a string (not a list)
+                if "Comments" in ai_response:
+                    comments = ai_response["Comments"]
+                    if isinstance(comments, list):
+                        ai_response["Comments"] = " ".join(str(item) for item in comments)
+                    elif not isinstance(comments, str):
+                        ai_response["Comments"] = str(comments)
                 
                 return ai_response
                 

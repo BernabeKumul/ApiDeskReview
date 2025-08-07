@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     qdrant_https: bool = False  # Usar HTTP para desarrollo local
     
     # OpenAI Configuration
-    openai_api_key: str = "O5tS2BkyPc9QzW4XnyiivYHlh3Bm2hcwMeM8uwdCHm3sXoEsMrdaHdB_mcZ71BUREXvAD7RHq3T3BlbkFJxqNUlpzra5MDvlvOSr_gEptM3DlJh30ls2AeTZ5CHA2p3Stm7A6D8p6t8LjDqyo_of2X-A5nIA"  # Placeholder key to be updated
-    openai_model: str = "gpt-4"
+    openai_api_key: str = "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"  # Placeholder key to be updated
+    openai_model: str = "gpt-3.5-turbo"
     openai_max_tokens: int = 2000
     openai_temperature: float = 0.3
     
