@@ -26,10 +26,11 @@ class Settings(BaseSettings):
     qdrant_port: int = 6333
     qdrant_api_key: str = ""  # Sin API key para desarrollo local
     qdrant_collection_name: str = "AIDocumentsTest"  # Colección específica para testing
+    qdrant_BAAI_collection_name: str = "AIDocumentsTestBAAI"  # Colección para OpenAI embeddings
     qdrant_https: bool = False  # Usar HTTP para desarrollo local
     
     # OpenAI Configuration
-    openai_api_key: str = "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"  # Placeholder key to be updated
+    openai_api_key: str = ""  # Placeholder key to be updated
     openai_model: str = "gpt-3.5-turbo"
     openai_max_tokens: int = 2000
     openai_temperature: float = 0.3
